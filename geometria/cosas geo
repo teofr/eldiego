@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define dprint(v) cerr << #v"=" << v << endl //;)
+#define forr(i,a,b) for(int i=(a); i<(b); i++)
+#define forn(i,n) forr(i,0,n)
+#define dforn(i,n) for(int i=n-1; i>=0; i--)
+#define forall(it,v) for(auto it=v.begin();it!=v.end();++it)
+#define sz(c) ((int)c.size())
+#define zero(v) memset(v, 0, sizeof(v))
+#define pb push_back
+#define fst first
+#define snd second
+typedef long long ll;
+typedef pair<int,int> ii;
+
+double toDegree(double radian){
+	return radian*180/M_PI;
+	
+}
+
+double toRadian(double degree){
+	return degree*M_PI/180;
+	}
+
+// sine, asin, cos, acos, tan y atan trabajan en radianes!!
+
+double CircArea(double r){return r*r*M_PI;}
+
+double porcionCircArea(double r, double angle){ //angle en grados
+		return CircArea(r)*angle/360;
+	
+	}
+
+
+/*[]{}>><<*/ 
+int main() {
+    //ios::sync_with_stdio(0);
+    double a,b; 
+    while(cin >> a >> b){
+		 double r = a+b;
+		 double l = sqrt(r*r - (a-b)*(a-b));
+		 double angle = asin((a-b)/r);
+		 double degree = 90 - toDegree(angle); 
+		 double areaT = (a-b)*l;
+		 //double areacirc = r*r*M_PI;
+		 double areaR = porcionCircArea(r,2*degree);//areacirc*2*degree/360;
+		 double areaB = CircArea(b);//b*b*M_PI;
+			
+		 printf("%.3f\n",areaR - areaT - areaB);
+    }
+    return 0;
+}
