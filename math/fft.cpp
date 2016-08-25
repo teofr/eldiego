@@ -50,6 +50,7 @@ inline static void calc_rev(int n){//precalculo: llamar antes de fft!!
 		rev[i] = 0;
         forn(k, lg) if(i&(1<<k)) rev[i]|=1<<(lg-1-k);
     }}
+//multiplica vectores en nlgn
 inline static void multiply(const vector<int> &a, const vector<int> &b, vector<int> &res) {
 	vector<base> fa (a.begin(), a.end()),  fb (b.begin(), b.end());
     int n=1; while(n < max(sz(a), sz(b))) n <<= 1; n <<= 1;
