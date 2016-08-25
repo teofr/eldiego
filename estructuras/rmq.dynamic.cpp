@@ -12,7 +12,7 @@ struct RMQ{
 	}
 	void updall(){//O(n)
 		dforn(i, sz) t[i]=operacion(t[2*i], t[2*i+1]);}
-	tipo get(int i, int j){return get(i,j,1,0,sz);}
+	tipo get(int i, int j){return get(i,j,1,0,sz);} // [i,j) !
 	tipo get(int i, int j, int n, int a, int b){//O(lgn)
 		if(j<=a || i>=b) return neutro;
 		if(i<=a && b<=j) return t[n];
