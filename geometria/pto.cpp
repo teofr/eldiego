@@ -15,14 +15,15 @@ struct pto{
 	//returns true if this is at the left side of line qr
 	bool left(pto q, pto r){return ((q-*this)^(r-*this))>0;}
 	bool operator<(const pto &a) const{return x<a.x-EPS || (abs(x-a.x)<EPS && y<a.y-EPS);}
-bool operator==(pto a){return abs(x-a.x)<EPS && abs(y-a.y)<EPS;}
+    bool operator==(pto a){return abs(x-a.x)<EPS && abs(y-a.y)<EPS;}
 	double norm(){return sqrt(x*x+y*y);}
 	double norm_sq(){return x*x+y*y;}
 };
 double dist(pto a, pto b){return (b-a).norm();}
 typedef pto vec;
 
-double angle(pto a, pto o, pto b){
+//positivo si aob están en sentido antihorario con un ángulo <180º
+double angle(pto a, pto o, pto b){ //devuelve radianes! (-pi,pi)
 	pto oa=a-o, ob=b-o;
 	return atan2(oa^ob, oa*ob);}
 
