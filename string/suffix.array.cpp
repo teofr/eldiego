@@ -1,8 +1,8 @@
-#define MAX_N 1000
-#define rBOUND(x) (x<n? r[x] : 0)
+#define MAX_N 112345
+#define rBOUND(x) ((x) < n ? r[(x)] : 0)
 //sa will hold the suffixes in order.
 int sa[MAX_N], r[MAX_N], n;
-string s; //input string, n=sz(s)
+string s; //input string, n=s.size()
 
 int f[MAX_N], tmpsa[MAX_N];
 void countingSort(int k){
@@ -11,27 +11,27 @@ void countingSort(int k){
 	int sum=0;
 	forn(i, max(255, n)){
 		int t=f[i]; f[i]=sum; sum+=t;}
-	forn(i, n)
+	forn(i,n)
 		tmpsa[f[rBOUND(sa[i]+k)]++]=sa[i];
-	memcpy(sa, tmpsa, sizeof(sa));
+	forn(i,n) sa[i] = tmpsa[i];
 }
 void constructsa(){//O(n log n)
-	n=sz(s);
-	forn(i, n) sa[i]=i, r[i]=s[i];
+	n = s.size();
+	forn(i,n) sa[i]=i, r[i]=s[i];
 	for(int k=1; k<n; k<<=1){
 		countingSort(k), countingSort(0);
 		int rank, tmpr[MAX_N];
 		tmpr[sa[0]]=rank=0;
 		forr(i, 1, n)
-			tmpr[sa[i]]=(r[sa[i]]==r[sa[i-1]] && r[sa[i]+k]==r[sa[i-1]+k] )? rank : ++rank;
-		memcpy(r, tmpr, sizeof(r));
+			tmpr[sa[i]] = (r[sa[i]]==r[sa[i-1]] && r[sa[i]+k]==r[sa[i-1]+k]) ? rank : ++rank;
+		forn(i,n) r[i]=tmpr[i];
 		if(r[sa[n-1]]==n-1) break;
 	}
 }
-void print(){//for debug
+void print(){//for debugging
 	forn(i, n)
 		cout << i << ' ' <<
-		s.substr(sa[i], s.find( '$', sa[i])-sa[i]) << endl;}
+		s.substr(sa[i], s.find('$',sa[i])-sa[i]) << endl;}
 
 
 //returns (lowerbound, upperbound) of the search
@@ -73,3 +73,14 @@ void computeLCP(){//O(n)
 	forn(i, n) LCP[i]=PLCP[sa[i]];
 }
 
+//usage
+int main() {
+    cin>>s;
+    s.pb('$');
+    constructsa();
+    computeLCP();
+    
+    //usar...
+
+    zero(phi); zero(sa); zero(r); zero(f); zero(tmpsa);
+}
