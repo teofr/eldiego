@@ -7,14 +7,15 @@ using namespace std;
 #define forn(i, n) for(int i=0; i<(n); i++)
 #define forr(i, a, b) for(int i=a; i<(b); i++)
 const int MAXN = 100100;
- 
+
+//O(nlg²n) !!! es más lento que el otro suffix array que es O(nlgn)
 
 pair<int, int> sf[MAXN];
 bool comp(int lhs, int rhs) {return sf[lhs] < sf[rhs];}
 struct SuffixArray {
 	//sa guarda los indices de los sufijos ordenados
     int sa[MAXN], r[MAXN];
-    void init(const char *a, int n) {
+    void init(const char *a, int n) { //O(nlg²n) !!!
         forn(i, n) r[i] = a[i];
         for(int m = 1; m < n; m <<= 1) {
 			forn(i, n) sa[i]=i, sf[i] = make_pair(r[i], i+m<n? r[i+m]:-1);
