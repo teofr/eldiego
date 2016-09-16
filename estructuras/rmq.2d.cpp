@@ -1,7 +1,6 @@
 struct RMQ2D{//n filas x m columnas
 	int sz;
 	RMQ t[4*MAXN];
-	RMQ &operator[](int p){return t[sz/2+p];}//t[i][j]=i fila, j col
 	void init(int n, int m){//O(n*m)
 		sz = 1 << (32-__builtin_clz(n));
 		forn(i, 2*sz) t[i].init(m); }
