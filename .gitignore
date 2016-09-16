@@ -22,6 +22,9 @@
 
 # Mierda del latex
 *.tex.swp
+*.aux
+*.log
+*.toc
 
 # basura del gummi
 .fuse_hidden*
