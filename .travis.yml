@@ -1,0 +1,21 @@
+sudo: required
+dist: trusty
+
+before_install:
+- sudo apt-get -qq update && sudo apt-get install -y texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended texlive-lang-spanish texlive-xetex
+
+script:
+- mkdir _build
+- xelatex -interaction=nonstopmode -halt-on-error -output-directory _build eldiego.tex
+- xelatex -interaction=nonstopmode -halt-on-error -output-directory _build eldiego.tex
+- xelatex -interaction=nonstopmode -halt-on-error -output-directory _build eldiego.tex
+
+deploy:
+  provider: releases
+  api_key:
+    secure: QXL+Ot/mQlJEb485Sdm9IgBfdpUCMaeRB/cot2llTJcJJDbF0i+NhICcBhsJhzvzJpNsGTK7PimHKKzsUKE4VEkOOGM8ncAb2/6R3AMTOr3YyrILJGTvrZTdA1zK1vHM6194Xl7MDxoeCqmNVI296N7/cfIdBs9F+SVX4YP31qkpdROtGGeJBIMc9grs3CNK2Q5uQAsMLhLQe+yni5Vg2WidSf3JpmzxeyznuCrpN2MnLqSq80WOxYJHz5vaWUqbaoq7s4aJajPjwrN5OhfLT1uwJx222fr8EG1ohxSQfU0WAfn0wIWZh7ZqK2sf4m5cX/MmAzfhCEerwIYKY9ufIDhRStB4zMfNFKY5q5ZoW/ZuC2j44vuOIdzFyq905FJM6xYxC+Lwn9YSHMVO5AdWs+4FTPBQrzg0LD4n6OpPmhcodA1CkQW+BJ1y6yQhXwlGXhPxq81A6QCvYY9+bvzB4AKFtD46FTxHlDRri7xqs2lyxZNRpag7+gpusUzeyRUOVr1OM+J/N+koA/Av0p4srF9Ck30luOP4c8OXJOGgSNfhTD0q6IIzE0XC2WFRJtHvocCWeSDX2OzHsjD6RB/OfIIdGVdfX0uqDU44et+in6vJ+YJucALij/DRBPX34MzaiSkaL/JUbDVK6S32mNgY6KAFv5Bk7n6vXdEJs1GpQ84=
+  file: _build/eldiego.pdf
+  skip_cleanup: true
+  on:
+    repo: elopez/eldiego
+    tags: true

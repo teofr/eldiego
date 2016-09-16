@@ -28,3 +28,7 @@
 
 # basura del gummi
 .fuse_hidden*
+
+# travis ci
+.travis.yml
+_build
