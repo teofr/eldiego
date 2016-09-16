@@ -3,8 +3,13 @@
 #include<ext/pb_ds/tree_policy.hpp>
 using namespace __gnu_pbds;
 using namespace std;
+
 template <typename T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
+//o bien usar así:
+typedef tree<int,null_type,less<int>,//key, mapped type, comparator. Se puede usar como map<a,b> poniendo tree<a,b,...
+    rb_tree_tag,tree_order_statistics_node_update> set_t;
 
 int main(){
 	ordered_set<int>  s;
