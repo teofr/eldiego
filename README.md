@@ -1,9 +1,7 @@
 El Diego
 =======
 
-This is a collection of implementations of different algorithms our team "Caloventor en Dos" used at ACM-ICPC. Everything is put in eldiego.pdf, and a stripped down version eldiegorecortado.pdf is the one we used in the the World Finals (since it has a limit of 25 pages).
-
-Notebook del equipo Caloventor en Dos. Gabina Rlz.
+Notebook del equipo Flower Power. ~~Robado al~~ Basado en el notebook del equipo Caloventor en Dos.
 
 Colores para el Geany!
 ------------
