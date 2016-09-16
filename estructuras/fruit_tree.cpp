@@ -14,10 +14,13 @@ int main(){
 	cout << *s.find_by_order(0) << endl; // s.find_by_order(i): i-th smallest number in s. (empieza en 0)
 	cout << *s.lower_bound(1) << endl;
 }
-
+//order_of_key(k): devuelve la pos del lower bound de k
+//find_by_order(i) devuelve iterador al i-esimo elemento
+//Ej: 12, 100, 505, 1000, 10000.
+//order_of_key(10) == 0, order_of_key(100) == 1,
+//order_of_key(707) == 3, order_of_key(9999999) == 5
 
 /*
-
 Si son int se puede hacer con un rmq y busqueda binaria.
 
 rmq[i] = 1 si i esta 
@@ -28,5 +31,4 @@ rmq.get(i,j) = suma en el intervalo [i,j)
 order_of_key(i) == rmq.get(0,i)
 find_by_order(o) == busqueda binaria en i / rmq.get(0,i+1) == o
 lower_bound(i) == find_by_order(order_of_key(i)-1)
-
 */
