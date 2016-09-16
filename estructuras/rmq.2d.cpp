@@ -14,7 +14,7 @@ struct RMQ2D{//n filas x m columnas
 	tipo get(int i1, int j1, int i2, int j2){return get(i1,j1,i2,j2,1,0,sz);}
 	//O(lgm.lgn), rangos cerrado abierto
 	int get(int i1, int j1, int i2, int j2, int n, int a, int b){
-		if(i2<=a || i1>=b) return 0;
+		if(i2<=a || i1>=b) return neutro;
 		if(i1<=a && b<=i2) return t[n].get(j1, j2);
 		int c=(a+b)/2;
 		return operacion(get(i1, j1, i2, j2, 2*n, a, c),
