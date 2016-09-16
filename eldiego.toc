@@ -1,0 +1,100 @@
+\contentsline {section}{\numberline {1}algorithm}{1}{section.1}
+\contentsline {section}{\numberline {2}Estructuras}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}RMQ (static)}{2}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}RMQ (dynamic)}{2}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}RMQ (lazy)}{2}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}RMQ (persistente)}{3}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Fenwick Tree}{3}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Union Find}{4}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}Disjoint Intervals}{4}{subsection.2.7}
+\contentsline {subsection}{\numberline {2.8}RMQ (2D)}{4}{subsection.2.8}
+\contentsline {subsection}{\numberline {2.9}Big Int}{4}{subsection.2.9}
+\contentsline {subsection}{\numberline {2.10}HashTables}{6}{subsection.2.10}
+\contentsline {subsection}{\numberline {2.11}Modnum}{6}{subsection.2.11}
+\contentsline {subsection}{\numberline {2.12}Treap para set}{6}{subsection.2.12}
+\contentsline {subsection}{\numberline {2.13}Treap para arreglo}{7}{subsection.2.13}
+\contentsline {subsection}{\numberline {2.14}Convex Hull Trick}{8}{subsection.2.14}
+\contentsline {subsection}{\numberline {2.15}Convex Hull Trick (Dynamic)}{8}{subsection.2.15}
+\contentsline {subsection}{\numberline {2.16}Gain-Cost Set}{9}{subsection.2.16}
+\contentsline {subsection}{\numberline {2.17}Set con busq binaria}{9}{subsection.2.17}
+\contentsline {section}{\numberline {3}Algos}{9}{section.3}
+\contentsline {subsection}{\numberline {3.1}Longest Increasing Subsecuence}{9}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Alpha-Beta prunning}{10}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Mo's algorithm}{10}{subsection.3.3}
+\contentsline {section}{\numberline {4}Strings}{10}{section.4}
+\contentsline {subsection}{\numberline {4.1}Manacher}{10}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}KMP}{11}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Trie}{11}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Suffix Array (largo, nlogn)}{11}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}String Matching With Suffix Array}{12}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}LCP (Longest Common Prefix)}{12}{subsection.4.6}
+\contentsline {subsection}{\numberline {4.7}Corasick}{12}{subsection.4.7}
+\contentsline {subsection}{\numberline {4.8}Suffix Automaton}{13}{subsection.4.8}
+\contentsline {subsection}{\numberline {4.9}Z Function}{13}{subsection.4.9}
+\contentsline {section}{\numberline {5}Geometria}{14}{section.5}
+\contentsline {subsection}{\numberline {5.1}Punto}{14}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Orden radial de puntos}{14}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Line}{14}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Segment}{14}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}Rectangle}{15}{subsection.5.5}
+\contentsline {subsection}{\numberline {5.6}Polygon Area}{15}{subsection.5.6}
+\contentsline {subsection}{\numberline {5.7}Circle}{15}{subsection.5.7}
+\contentsline {subsection}{\numberline {5.8}Point in Poly}{16}{subsection.5.8}
+\contentsline {subsection}{\numberline {5.9}Point in Convex Poly log(n)}{16}{subsection.5.9}
+\contentsline {subsection}{\numberline {5.10}Convex Check CHECK}{16}{subsection.5.10}
+\contentsline {subsection}{\numberline {5.11}Convex Hull}{16}{subsection.5.11}
+\contentsline {subsection}{\numberline {5.12}Cut Polygon}{17}{subsection.5.12}
+\contentsline {subsection}{\numberline {5.13}Bresenham}{17}{subsection.5.13}
+\contentsline {subsection}{\numberline {5.14}Rotate Matrix}{17}{subsection.5.14}
+\contentsline {subsection}{\numberline {5.15}Interseccion de Circulos en n3log(n)}{17}{subsection.5.15}
+\contentsline {section}{\numberline {6}Math}{18}{section.6}
+\contentsline {subsection}{\numberline {6.1}Identidades}{18}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Ec. Caracteristica}{18}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Combinatorio}{18}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Exp. de Numeros Mod.}{18}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Exp. de Matrices y Fibonacci en log(n)}{18}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.6}Matrices y determinante $O(n^3)$}{19}{subsection.6.6}
+\contentsline {subsection}{\numberline {6.7}Teorema Chino del Resto}{19}{subsection.6.7}
+\contentsline {subsection}{\numberline {6.8}Criba}{19}{subsection.6.8}
+\contentsline {subsection}{\numberline {6.9}Funciones de primos}{20}{subsection.6.9}
+\contentsline {subsection}{\numberline {6.10}Phollard's Rho (rolando)}{20}{subsection.6.10}
+\contentsline {subsection}{\numberline {6.11}GCD}{21}{subsection.6.11}
+\contentsline {subsection}{\numberline {6.12}Extended Euclid}{21}{subsection.6.12}
+\contentsline {subsection}{\numberline {6.13}LCM}{21}{subsection.6.13}
+\contentsline {subsection}{\numberline {6.14}Inversos}{21}{subsection.6.14}
+\contentsline {subsection}{\numberline {6.15}Simpson}{22}{subsection.6.15}
+\contentsline {subsection}{\numberline {6.16}Fraction}{22}{subsection.6.16}
+\contentsline {subsection}{\numberline {6.17}Polinomio}{22}{subsection.6.17}
+\contentsline {subsection}{\numberline {6.18}Ec. Lineales}{23}{subsection.6.18}
+\contentsline {subsection}{\numberline {6.19}FFT}{23}{subsection.6.19}
+\contentsline {subsection}{\numberline {6.20}Tablas y cotas (Primos, Divisores, Factoriales, etc)}{24}{subsection.6.20}
+\contentsline {paragraph}{Factoriales}{24}{section*.2}
+\contentsline {paragraph}{Primos}{24}{section*.3}
+\contentsline {paragraph}{Primos cercanos a $10^n$}{24}{section*.4}
+\contentsline {paragraph}{Cantidad de primos menores que $10^n$}{24}{section*.5}
+\contentsline {paragraph}{Divisores}{25}{section*.6}
+\contentsline {section}{\numberline {7}Grafos}{25}{section.7}
+\contentsline {subsection}{\numberline {7.1}Dijkstra}{25}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Bellman-Ford}{25}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Floyd-Warshall}{25}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Kruskal}{26}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}Prim}{26}{subsection.7.5}
+\contentsline {subsection}{\numberline {7.6}2-SAT + Tarjan SCC}{26}{subsection.7.6}
+\contentsline {subsection}{\numberline {7.7}Articulation Points}{26}{subsection.7.7}
+\contentsline {subsection}{\numberline {7.8}Comp. Biconexas y Puentes}{27}{subsection.7.8}
+\contentsline {subsection}{\numberline {7.9}LCA + Climb}{27}{subsection.7.9}
+\contentsline {subsection}{\numberline {7.10}Heavy Light Decomposition}{28}{subsection.7.10}
+\contentsline {subsection}{\numberline {7.11}Centroid Decomposition}{28}{subsection.7.11}
+\contentsline {subsection}{\numberline {7.12}Euler Cycle}{29}{subsection.7.12}
+\contentsline {subsection}{\numberline {7.13}Diametro árbol}{29}{subsection.7.13}
+\contentsline {subsection}{\numberline {7.14}Chu-liu}{29}{subsection.7.14}
+\contentsline {subsection}{\numberline {7.15}Hungarian}{30}{subsection.7.15}
+\contentsline {subsection}{\numberline {7.16}Dynamic Conectivity}{31}{subsection.7.16}
+\contentsline {section}{\numberline {8}Network Flow}{32}{section.8}
+\contentsline {subsection}{\numberline {8.1}Dinic}{32}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Konig}{33}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Edmonds Karp's}{33}{subsection.8.3}
+\contentsline {subsection}{\numberline {8.4}Push-Relabel O(N3)}{33}{subsection.8.4}
+\contentsline {subsection}{\numberline {8.5}Min-cost Max-flow}{34}{subsection.8.5}
+\contentsline {section}{\numberline {9}Template}{35}{section.9}
+\contentsline {section}{\numberline {10}Ayudamemoria}{35}{section.10}

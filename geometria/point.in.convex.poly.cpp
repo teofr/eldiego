@@ -9,6 +9,10 @@ void normalize(vector<pto> &pt){//delete collinear points first!
     forn(i, n) shift[i]=pt[(pi+i)%n];
     pt.swap(shift);
 }
+
+/* left debe decir >0 para que considere los bordes. Ojo que Convex Hull
+    necesita que left diga >= 0 para limpiar los colineales, hacer otro left
+    si hace falta */
 bool inPolygon(pto p, const vector<pto> &pt){
 	//call normalize first!
 	if(p.left(pt[0], pt[1]) || p.left(pt[sz(pt)-1], pt[0])) return false;
