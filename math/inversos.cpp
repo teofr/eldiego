@@ -11,7 +11,7 @@ void calc(int p){//O(p)
 	forr(i, 2, p) inv[i]= p-((p/i)*inv[p%i])%p;
 }
 int inverso(int x){//O(log x)
-	return expmod(x, eulerphi(MOD)-2);//si mod no es primo(sacar a mano)
+	return expmod(x, eulerphi(MOD)-1);//si mod no es primo(sacar a mano) PROBAR!
 	return expmod(x, MOD-2);//si mod es primo
 }
 

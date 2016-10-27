@@ -15,8 +15,8 @@ void init(){
 	memset(cmp, -1, sizeof(cmp)), qcmp=0;
 	
 	}
-
-void tjn(int v){//O(V+E) --dfs +*
+//OJO! las componentes van de 1 a qcmp!
+void tjn(int v){//O(V+E)
 	lw[v]=idx[v]=++qidx;
 	q.push(v), cmp[v]=-2;
 	forall(it, G[v]){
