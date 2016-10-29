@@ -449,9 +449,9 @@ getrlimit(RLIMIT_STACK, &rl);
 rl.rlim_cur=1024L*1024L*256L;//256mb
 setrlimit(RLIMIT_STACK, &rl);
 \end{code}
-\subsection*{C++11}
+\subsection*{C++0x / C++11}
 \begin{code}
-g++ --std=c++1
+g++ -std=c++0x o g++ -std=c++11
 \end{code}
 \subsection*{Leer del teclado}
 \begin{code}
