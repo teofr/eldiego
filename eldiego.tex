@@ -70,6 +70,10 @@ Dado un arreglo y una operacion asociativa \emph{idempotente}, get(i, j) opera s
 \cppfile[21-43]{string/kmp.cpp}
 \subsection{Trie}
 \cppfile{string/trie.cpp}
+\subsection{Regex}
+\cppfile{string/regex.cpp}
+\subsection{Needleman Wunsnch}
+\cppfile{string/needleman.wunsnch.cpp}
 %\subsection{Suffix Array (corto, nlog2n)}
 %\cppfile[12-26]{string/suffix.array.short.cpp}
 \subsection{Suffix Array (largo, nlogn)}
@@ -449,9 +453,9 @@ getrlimit(RLIMIT_STACK, &rl);
 rl.rlim_cur=1024L*1024L*256L;//256mb
 setrlimit(RLIMIT_STACK, &rl);
 \end{code}
-\subsection*{C++11}
+\subsection*{C++0x / C++11}
 \begin{code}
-g++ --std=c++1
+g++ -std=c++0x o g++ -std=c++11
 \end{code}
 \subsection*{Leer del teclado}
 \begin{code}
