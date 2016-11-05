@@ -1,7 +1,7 @@
 #define MAX_N 112345
 #define rBOUND(x) ((x) < n ? r[(x)] : 0)
 //sa will hold the suffixes in order.
-int sa[MAX_N], r[MAX_N], n;
+int sa[MAX_N], r[MAX_N], n;// OJO n = s.size()!
 string s; //input string, n=s.size()
 
 int f[MAX_N], tmpsa[MAX_N];
@@ -34,8 +34,8 @@ void print(){//for debugging
 		s.substr(sa[i], s.find('$',sa[i])-sa[i]) << endl;}
 
 
-//returns (lowerbound, upperbound) of the search
-ii stringMatching(string P){ //O(sz(P)lgn)
+//returns [lowerbound, upperbound] of the search -- los extremos estan incluidos!
+pll stringMatching(string P){ //O(sz(P)lgn)
 	int lo=0, hi=n-1, mid=lo;
 	while(lo<hi){
 		mid=(lo+hi)/2;
@@ -43,8 +43,8 @@ ii stringMatching(string P){ //O(sz(P)lgn)
 		if(res>=0) hi=mid;
 		else lo=mid+1;
 	}
-	if(s.compare(sa[lo], sz(P), P)!=0) return ii(-1, -1);
-	ii ans; ans.fst=lo;
+	if(s.compare(sa[lo], sz(P), P)!=0) return {-1, -1};
+	pll ans; ans.fst=lo;
 	lo=0, hi=n-1, mid;
 	while(lo<hi){
 		mid=(lo+hi)/2;
