@@ -1,9 +1,4 @@
 const int MAXN=100000;
-struct UF{
-    void init(int n){}
-    void join(int a, int v){}
-    int comp(int n){return 0;}
-}uf;
 vector<ii> G[MAXN];
 int n;
 
