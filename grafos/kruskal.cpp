@@ -1,4 +1,3 @@
-
 const int MAXN=100000;
 struct UF{
     void init(int n){}
