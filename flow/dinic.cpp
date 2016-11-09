@@ -16,6 +16,11 @@ const int MAX = 300;
 // Max Independent Set: tomar los vertices NO tomados por el Min Vertex Cover
 // Max Clique: construir la red de G complemento (debe ser bipartito!) y encontrar un Max Independet Set
 // Min Edge Cover: tomar las aristas del matching + para todo vertices no cubierto hasta el momento, tomar cualquier arista de el
+//Complejidad: 
+//Peor caso: O(V^2E)
+//Si todas las capacidades son 1: O(min(E^1/2,V^2/3)E)
+//Para matching bipartito es: O(sqrt(V)E)
+
 int nodes, src, dst;
 int dist[MAX], q[MAX], work[MAX];
 struct Edge {

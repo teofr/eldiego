@@ -31,6 +31,13 @@ void centroid(int v=0, int f=-1, int lvl=0, int tam=-1) {//O(nlogn)
 		{szt[v]=0; centroid(*it, f, lvl, tam); return;}
 	taken[v]=true;
 	padre[v]=f;
+	/*Analizar todos los caminos que pasan por este nodo:
+	 * Agregar la informacion de cada subarbol
+	 * Para cada subarbol:
+	 * -sacar la informacion
+	 * -analizar
+	 * -agregar de nuevo la informacion
+	 */
 	forall(it, G[v]) if(!taken[*it])
 		centroid(*it, v, lvl+1, -1);
 }
