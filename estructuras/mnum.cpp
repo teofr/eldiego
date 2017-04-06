@@ -1,3 +1,4 @@
+//lindos valores para hash
 #define MOD 1000000000000000009
 #define PRIME 1009
 
@@ -15,7 +16,8 @@ struct mnum{
 	mnum(tipo v=0): v(v%mod) {}
 	mnum operator+(mnum b){return v+b.v;}
 	mnum operator-(mnum b){return ((v-b.v)%mod)+mod;}
-	mnum operator*(mnum b){return mul(v,b.v,mod);}
+	//mnum operator*(mnum b){return v*b.v;} //Si mod<=1e9+9
+	mnum operator*(mnum b){return mul(v,b.v,mod);} //Si mod<=1e18+9
 	mnum operator^(int n){
 		if(!n) return 1;
 		return n%2 ? ((*this)^(n/2))*(*this) : (*this)^(n/2);}
