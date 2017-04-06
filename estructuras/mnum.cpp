@@ -13,8 +13,8 @@ struct mnum{
 	static const tipo mod=MOD;
 	tipo v;
 	mnum(tipo v=0): v(v%mod) {}
-	mnum operator+(mnum b){return (v+b.v)%mod;}
-	mnum operator-(mnum b){return (((v-b.v)%mod)+mod)%mod;}
+	mnum operator+(mnum b){return v+b.v;}
+	mnum operator-(mnum b){return ((v-b.v)%mod)+mod;}
 	mnum operator*(mnum b){return mul(v,b.v,mod);}
 	mnum operator^(int n){
 		if(!n) return 1;
