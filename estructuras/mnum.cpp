@@ -1,6 +1,14 @@
 #define MOD 1000000000000000009
 #define PRIME 1009
 
+ll mul(ll a, ll b, ll m) { //hace (a*b)%m
+	ll q = (ll)((long double)a*b/m);
+	ll r = a*b-m*q;
+	while(r<0) r += m;
+	while(r>=m) r -= m;
+	return r;	
+}
+
 struct mnum{
 	static const tipo mod=MOD;
 	tipo v;
