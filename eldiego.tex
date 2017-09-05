@@ -12,7 +12,7 @@
 
 
 \section{Estructuras}%%%%%%%%%%%%%%%%%%ESTRUCTURAS%%%%%%%%%%%%%%%%%%
-\subsection{RMQ (static)}
+\subsection{RMQ (static) \dotfill Teo}
 Dado un arreglo y una operacion asociativa \emph{idempotente}, get(i, j) opera sobre el rango [i, j). Restriccion: LVL $\ge$ ceil(logn); Usar [ ] para llenar arreglo y luego build().
 \cppfile{estructuras/rmq.static.cpp}
 \subsection{RMQ (dynamic)}
@@ -23,7 +23,7 @@ Dado un arreglo y una operacion asociativa \emph{idempotente}, get(i, j) opera s
 \cppfile[23-53]{estructuras/rmq.persistent.cpp}
 \subsection{Fenwick Tree}
 \cppfile{estructuras/fenwick.cpp}
-\subsection{Union Find}
+\subsection{Union Find \dotfill Teo}
 \cppfile{grafos/union.find.cpp}
 \subsection{Disjoint Intervals}
 \cppfile{estructuras/disjoint.intervals.cpp}
@@ -39,8 +39,9 @@ Dado un arreglo y una operacion asociativa \emph{idempotente}, get(i, j) opera s
 \cppfile[16-89]{estructuras/treap.cpp}
 \subsection{Treap para arreglo}
 \cppfile[17-87]{estructuras/treaparr.cpp}
-\subsection{Convex Hull Trick}
-\cppfile[18-55]{estructuras/convexhull.trick.cpp}
+\subsection{Convex Hull Trick \dotfill Teo}
+Dado un conjunto de funciones de la pinta f(x)=mx+b, encontrar $min_f(f(x))$, para un x dado. Lineal si los x vienen ordenados.
+\cppfile[18-58]{estructuras/convexhull.trick.cpp}
 \subsection{Convex Hull Trick (Dynamic)}
 \cppfile[17-56]{estructuras/convexhull.trick.dyn.cpp}
 \subsection{Gain-Cost Set}
@@ -50,6 +51,7 @@ Dado un arreglo y una operacion asociativa \emph{idempotente}, get(i, j) opera s
 \subsection{RMQ Mixed}
 \cppfile[1-59]{estructuras/rmq.mixed.cpp}
 \subsection{BIT}
+Me pa que es tipo un segment tree, pero hecho como un trie, se va haciendo dinámicamente.
 \cppfile{estructuras/bitrie.cpp}
 
 
@@ -63,7 +65,7 @@ Dado un arreglo y una operacion asociativa \emph{idempotente}, get(i, j) opera s
 \subsection{huffman}
 \cppfile{algos/huffman.cpp}
 \subsection{Optimizaciones para DP}
-\cppfile{algos/dpoptimization}
+\cppfile{algos/dpoptimization.cpp}
 
 \section{Strings}%%%%%%%%%%%%%%%%%%STRINGS%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Manacher}

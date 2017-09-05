@@ -1,11 +1,11 @@
 struct bitrie{
 	static const int sz=1<<5;//5=ceil(log(n))
 	int V;//valor del nodo
-	vector<bitrie> ch;//childs
+	vector<bitrie> ch;//childs, se puede hacer con un map
 	bitrie():V(0){}//NEUTRO
 	void set(int p, int v, int bit=sz>>1){//O(log sz)
 		if(bit){
-			ch.resize(2);
+			ch.resize(2); //no cambia elementos si no estaban
 			ch[(p&bit)>0].set(p, v, bit>>1);
 			V=max(ch[0].V, ch[1].V);
 		}

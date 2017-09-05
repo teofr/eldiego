@@ -25,6 +25,7 @@
 *.aux
 *.log
 *.toc
+*.synctex.gz
 
 # basura del gummi
 .fuse_hidden*
