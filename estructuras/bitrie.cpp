@@ -5,7 +5,7 @@ struct bitrie{
 	bitrie():V(0){}//NEUTRO
 	void set(int p, int v, int bit=sz>>1){//O(log sz)
 		if(bit){
-			ch.resize(2); //no cambia elementos si no estaban
+			ch.resize(2); //no cambia elementos si estaban
 			ch[(p&bit)>0].set(p, v, bit>>1);
 			V=max(ch[0].V, ch[1].V);
 		}
