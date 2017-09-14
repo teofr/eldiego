@@ -15,3 +15,9 @@ Villeador de C++
 -----------
 Taken from:
 https://github.com/Scylardor/cminify
+
+TODO
+-------
+
+* Chequear a este guacho https://github.com/jeffrey-xiao/competitive-programming
+* Poner lo básico de teoría de juegos
