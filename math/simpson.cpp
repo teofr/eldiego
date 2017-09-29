@@ -1,3 +1,5 @@
+// Para intervalo [0, 8], polinomio de a lo sumo grado 8, 2700 divisiones alcanzaron
+// con error de a lo sumo 10e-5
 double integral(double a, double b, int n=10000) {//O(n), n=cantdiv
 	double area=0, h=(b-a)/n, fa=f(a), fb;
 	forn(i, n){

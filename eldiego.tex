@@ -3,7 +3,7 @@
 %"The PDF file may contain up to 25 pages of reference material, single-sided, letter or A4 size, with text and illustrations readable by a person with correctable eyesight without magnification from a distance of 1/2 meter."
 \input{preamble.tex}
 \begin{document}
-\def\title{Flower Power - Universidad Nacional de Rosario}
+\def\title{El Bueno, el Ralo y el Feo}
 \centering{\includegraphics[width=3.5cm]{fotodiego}}
 \tableofcontents\newpage
  
@@ -12,7 +12,7 @@
 
 
 \section{Estructuras}%%%%%%%%%%%%%%%%%%ESTRUCTURAS%%%%%%%%%%%%%%%%%%
-\subsection{RMQ (static) \dotfill Teo}
+\subsection{RMQ (static)}
 Dado un arreglo y una operacion asociativa \emph{idempotente}, get(i, j) opera sobre el rango [i, j). Restriccion: LVL $\ge$ ceil(logn); Usar [ ] para llenar arreglo y luego build().
 \cppfile{estructuras/rmq.static.cpp}
 \subsection{RMQ (dynamic)}
@@ -23,7 +23,7 @@ Dado un arreglo y una operacion asociativa \emph{idempotente}, get(i, j) opera s
 \cppfile[23-53]{estructuras/rmq.persistent.cpp}
 \subsection{Fenwick Tree}
 \cppfile{estructuras/fenwick.cpp}
-\subsection{Union Find \dotfill Teo}
+\subsection{Union Find}
 \cppfile{grafos/union.find.cpp}
 \subsection{Disjoint Intervals}
 \cppfile{estructuras/disjoint.intervals.cpp}
@@ -39,7 +39,7 @@ Dado un arreglo y una operacion asociativa \emph{idempotente}, get(i, j) opera s
 \cppfile[16-89]{estructuras/treap.cpp}
 \subsection{Treap para arreglo}
 \cppfile[17-87]{estructuras/treaparr.cpp}
-\subsection{Convex Hull Trick \dotfill Teo}
+\subsection{Convex Hull Trick}
 Dado un conjunto de funciones de la pinta f(x)=mx+b, encontrar $min_f(f(x))$, para un x dado. Lineal si los x vienen ordenados.
 \cppfile[18-58]{estructuras/convexhull.trick.cpp}
 \subsection{Convex Hull Trick (Dynamic)}
@@ -170,6 +170,21 @@ $T(n)=\sum_{i=1}^q{\sum_{j=0}^{m_i - 1}c_{ij} n^j r_i^n}$
 Las constantes $c_{ij}$ se determinan por los casos base.
 \subsection{Combinatorio}
 \cppfile{math/combinatorio.cpp}
+\subsection{Stars and bars}
+Teniendo n estrellas y k cajas (k-1 barras):
+\begin{itemize}
+\centering
+\item conjuntos no vacios: $\binom{n-1}{k-1}$;
+\item conjuntos vacios: $\binom{n+k-1}{k-1}$.
+\end{itemize}
+\subsection{Teoria de Juegos (básico)}
+\underline{Nim}: tengo varias pilas de tamaño $n_i$, puedo sacar la cantidad que quiera de una sola pila, al menos uno. Pierdo si no hay pilas. La posición es ganadora sii $n_1 ~xor~ n_2 ~xor... n_k$ es positivo.
+
+\underline{Otros juegos}, para cada posición obtengo la pila de Nim equivalente:
+\begin{itemize}
+\item Si la posición es perderora, su nimber es 0;
+\item sino, es el mex, de los nimbers de las posiciones alcanzables desde esta.
+\end{itemize}
 \subsection{Exp. de Numeros Mod.}
 \cppfile[2]{math/exp.mod.cpp}
 \subsection{Exp. de Matrices y Fibonacci en log(n)}
@@ -178,6 +193,7 @@ Las constantes $c_{ij}$ se determinan por los casos base.
 \cppfile[17-77]{math/determinante.cpp}
 \subsection{Teorema Chino del Resto}
 $$y=\sum_{j=1}^n (x_j*(\prod_{i=1, i\neq j}^n m_i)_{m_j}^{-1}*\prod_{i=1, i\neq j}^n m_i)$$
+\cppfile{math/chinoDelResto.cpp}
 \subsection{Criba}
 \cppfile[19-39]{math/criba.cpp}
 \subsection{Funciones de primos}
@@ -477,5 +493,9 @@ for(int sbm=bm; sbm; sbm=(sbm-1)&bm)
 \begin{code}
 //tambien se pueden usar comas: {a, x, m, l}
 touch {a..l}.in; tee {a..l}.cpp < template.cpp
+\end{code}
+\subsection*{Excepción en fuera de indices}
+\begin{code}
+g++ -g -D_GLIBCXX_DEBUG(_PEDANTIC)
 \end{code}
 \end{document}

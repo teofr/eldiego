@@ -1,25 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define forr(i,a,b) for(int i=(a); i<(b); i++)
-#define forn(i,n) forr(i,0,n)
-#define zero(v) memset(v, 0, sizeof(v))
-#define forall(it,v) for(auto it=v.begin();it!=v.end();++it)
+#define forsn(i,s,n) for(tint i=(tint)(s); i < (tint)(n); i++)
+#define forn(i,n) forsn(i,0,n)
+#define dforsn(i,s,n) for(tint i=(tint)(n)-1; i >= (tint)(s); i--)
+#define dforn(i,n) dforsn(i,0,n)
 #define pb push_back
+#define mp make_pair
 #define fst first
 #define snd second
-typedef long long ll;
-typedef pair<ll,ll> pll;
-#define dforn(i,n) for(int i=n-1; i>=0; i--)
-#define sz(C) ((int) C.size())
+typedef long long tint;
+#define sz(C) ((tint) C.size())
 
-ll n;
+#ifdef DEBUG
+#define debug(v) cerr << #v << " = " << (v) << endl;
+#else
+#define debug(v)
+#endif
 
 int main() {
     ios::sync_with_stdio(0); cin.tie(0);
 
-    while(cin >> n){
-
-    }
+    
 
     return 0;
 }
