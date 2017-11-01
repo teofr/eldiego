@@ -1,7 +1,7 @@
 #include <vector>
 #include <cstring>
 using namespace std;
-typedef long long ll;
+typedef long long tint;
 #define forall(it,v) for(auto it=v.begin();it!=v.end();++it)
 #define zero(v) memset(v, 0, sizeof(v))
 #define pb push_back
@@ -21,50 +21,51 @@ const int MAX = 300;
 //Si todas las capacidades son 1: O(min(E^1/2,V^2/3)E)
 //Para matching bipartito es: O(sqrt(V)E)
 
-int nodes, src, dst;
-int dist[MAX], q[MAX], work[MAX];
+int nodes, src, dst; // Setear estos
+vector<int> dist, q, work; // inicializar de tamaño n
 struct Edge {
     int to, rev;
-    ll f, cap;
-    Edge(int to, int rev, ll f, ll cap) : to(to), rev(rev), f(f), cap(cap) {}
+    tint f, cap;
+    Edge(int to, int rev, tint f, tint cap) : to(to), rev(rev), f(f), cap(cap) {}
 };
-vector<Edge> G[MAX];
-void addEdge(int s, int t, ll cap){
-    G[s].pb(Edge(t, sz(G[t]), 0, cap)), G[t].pb(Edge(s, sz(G[s])-1, 0, 0));}
+vector<vector<Edge>> G; // inicializar de tamaño n
+void addEdge(int s, int t, tint cap){
+    G[s].pb(Edge(t, G[t].size(), 0, cap)); G[t].pb(Edge(s, G[s].size(), 0, 0));}
 bool dinic_bfs(){
-    fill(dist, dist+nodes, -1), dist[src]=0;
+    for(auto & c : dist) c = -1;
+    dist[src]=0;
     int qt=0; q[qt++]=src;
     for(int qh=0; qh<qt; qh++){
         int u =q[qh];
-        forall(e, G[u]){
-            int v=e->to;
-            if(dist[v]<0 && e->f < e->cap)
+        for(auto &e : G[u]){
+            int v=e.to;
+            if(dist[v]<0 && e.f < e.cap)
                 dist[v]=dist[u]+1, q[qt++]=v;
         }
     }
     return dist[dst]>=0;
 }
-ll dinic_dfs(int u, ll f){
+tint dinic_dfs(int u, tint f){
     if(u==dst) return f;
-    for(int &i=work[u]; i<sz(G[u]); i++){
+    for(int &i=work[u]; i<G[u].size(); i++){
         Edge &e = G[u][i];
         if(e.cap<=e.f) continue;
         int v=e.to;
         if(dist[v]==dist[u]+1){
-                ll df=dinic_dfs(v, min(f, e.cap-e.f));
+                tint df=dinic_dfs(v, min(f, e.cap-e.f));
                 if(df>0){
-                        e.f+=df, G[v][e.rev].f-= df;
+                        e.f+=df; G[v][e.rev].f-= df;
                         return df;  }
         }
     }
     return 0;
 }
-ll maxFlow(int _src, int _dst){
+tint maxFlow(int _src, int _dst){
     src=_src, dst=_dst;
-    ll result=0;
+    tint result=0;
     while(dinic_bfs()){
-        fill(work, work+nodes, 0);
-        while(ll delta=dinic_dfs(src,INF))
+        for(auto & c : work) c = 0;
+        while(tint delta=dinic_dfs(src,INF))
             result+=delta;
     }
     // todos los nodos con dist[v]!=-1 vs los que tienen dist[v]==-1 forman el min-cut
