@@ -1,7 +1,7 @@
 El Diego
 =======
 
-Notebook del equipo Flower Power. ~~Robado al~~ Basado en el notebook del equipo Caloventor en Dos.
+Notebook del equipo El Bueno, el Ralo y el Feo. ~~Robado al~~ Basado en el notebook del equipo Flower Power. ~~Robado al~~ Basado en el notebook del equipo Caloventor en Dos.
 
 Colores para el Geany!
 ------------
