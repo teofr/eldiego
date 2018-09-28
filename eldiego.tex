@@ -226,6 +226,10 @@ tipo lcm(tipo a, tipo b){return a / gcd(a,b) * b;}
 \cppfile[29-62]{math/eclineales.cpp}
 \subsection{FFT}
 \cppfile[16-81]{math/fft.cpp}
+\subsection{Sum of Subsets}
+$$ F[mask] = \sum_{i \subseteq mask} A[i]$$
+$$ O(N 2^N) $$
+\cppfile{math/sumsubsets.cpp}
 \subsection{Tablas y cotas (Primos, Divisores, Factoriales, etc)}
 %\subsubsection{
 \paragraph{Factoriales} \ \\
