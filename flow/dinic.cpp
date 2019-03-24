@@ -22,13 +22,13 @@ const int MAX = 300;
 //Para matching bipartito es: O(sqrt(V)E)
 
 int nodes, src, dst; // Setear estos
-vector<int> dist, q, work; // inicializar de tamaño n
+vector<int> dist, q, work; // inicializar de tamano n
 struct Edge {
     int to, rev;
     tint f, cap;
     Edge(int to, int rev, tint f, tint cap) : to(to), rev(rev), f(f), cap(cap) {}
 };
-vector<vector<Edge>> G; // inicializar de tamaño n
+vector<vector<Edge>> G; // inicializar de tamano n
 void addEdge(int s, int t, tint cap){
     G[s].pb(Edge(t, G[t].size(), 0, cap)); G[t].pb(Edge(s, G[s].size(), 0, 0));}
 bool dinic_bfs(){

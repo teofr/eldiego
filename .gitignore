@@ -33,3 +33,7 @@
 # travis ci
 .travis.yml
 _build
+
+# Latex
+*.fdb_latexmk
+*.fls
