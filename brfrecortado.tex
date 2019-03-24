@@ -7,8 +7,6 @@
 % \centering{\includegraphics[width=3.5cm]{fotodiego}}
 %\tableofcontents\newpage
 
-test 4
-
 \section{algorithm}%%%%%%%%%%%%%%%%%%ALGORITHM%%%%%%%%%%%%%%%%%%
 \input{algorithm.tex}
 
@@ -16,7 +14,7 @@ test 4
 \subsection{RMQ (static)}
 % Dado un arreglo y una operacion asociativa \emph{idempotente}, get(i, j) opera sobre el rango [i, j). Restriccion: LVL $\ge$ ceil(logn); Usar [ ] para llenar arreglo y luego build().
 \cppfile{estructuras/rmq.static.cpp}
-\subsection{RMQ (dynamic)}
+\subsection{RMQ (dynamic)} 
 \cppfile{estructuras/rmq.dynamic.cpp}
 \subsection{RMQ (lazy)}
 \cppfile{estructuras/rmq.lazy.cpp}
@@ -35,8 +33,8 @@ test 4
 \cppfile{estructuras/rmq.2d.cpp}
 % \subsection{Big Int}
 % \cppfile{estructuras/bigint.cpp}
-\subsection{HashTables} % Tal vez
-\cppfile[16-30]{hash.cpp}
+\subsection{Hash para \texttt{$<$tint,tint$>$}} % Tal vez
+\cppfile[16-27]{hash.cpp}
 % \subsection{Modnum}
 % \cppfile{estructuras/mnum.cpp}
 %\subsection{Treap para set}
@@ -45,13 +43,13 @@ test 4
 %\cppfile[17-87]{estructuras/treaparr.cpp}
 \subsection{Convex Hull Trick}
 Dado un conjunto de funciones de la pinta f(x)=mx+b, encontrar $min_f(f(x))$, para un x dado. Lineal si los x vienen ordenados.
-\cppfile[18-58]{estructuras/convexhull.trick.cpp}
-\subsection{Convex Hull Trick (Dynamic)}
-\cppfile[17-56]{estructuras/convexhull.trick.dyn.cpp}
-\subsection{Gain-Cost Set} % Se nos podria ocurrir
-\cppfile[20-43]{estructuras/gain-cost.set.cpp}
-\subsection{Set con busq binaria} % Recortar el archivo
-\cppfile{estructuras/fruit_tree.cpp}
+\cppfile[16-51]{estructuras/convexhull.trick.cpp}
+\subsection{Convex Hull Trick (Dynamic) - O(log n)}
+\cppfile[14-53]{estructuras/convexhull.trick.dyn.cpp}
+\subsection{Gain-Cost Set O(log n)} % Se nos podria ocurrir
+\cppfile[20-42]{estructuras/gain-cost.set.cpp}
+\subsection{Set con busq binaria}
+\cppfile[3-15]{estructuras/fruit_tree.cpp}
 %\subsection{RMQ Mixed}
 %\cppfile[1-59]{estructuras/rmq.mixed.cpp}
 

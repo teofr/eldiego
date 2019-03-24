@@ -25,7 +25,7 @@ struct V{
 	bool operator<(const V &b)const{return gain<b.gain;}
 };
 set<V> s;
-void add(V x){
+void add(V x){ // O(log n) amortizado
 	set<V>::iterator p=s.lower_bound(x);//primer elemento mayor o igual
 	if(p!=s.end() && p->cost <= x.cost) return;//ya hay uno mejor
 	p=s.upper_bound(x);//primer elemento mayor
@@ -34,11 +34,10 @@ void add(V x){
 		while(p->cost >= x.cost){
 			if(p==s.begin()){s.erase(p); break;}
 			s.erase(p--);
-		}
-	}
+	}}
 	s.insert(x);
 }
-int get(int gain){//minimo costo de obtener tal ganancia
+int get(int gain){//minimo costo de obtener tal ganancia O(log n)
 	set<V>::iterator p=s.lower_bound((V){gain, 0});
 	return p==s.end()? INF : p->cost;}
 

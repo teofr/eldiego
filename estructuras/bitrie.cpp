@@ -14,8 +14,7 @@ struct bitrie{
 	int get(int i, int j, int a=0, int b=sz){//O(log sz)
 		if(j<=a || i>=b) return 0;//NEUTRO
 		if(i<=a && b<=j) return V;
-		if(!sz(ch)) return V;
+		if(ch.empty()) return V;
 		int c=(a+b)/2;
 		return max(ch[0].get(i, j, a, c), ch[1].get(i, j, c, b));
-	}
-};
+	}};

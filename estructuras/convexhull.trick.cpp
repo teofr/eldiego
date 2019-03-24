@@ -6,8 +6,6 @@ using namespace std;
 #define forn(i,n) forr(i,0,n)
 #define dforn(i,n) for(int i=n-1; i>=0; i--)
 #define forall(it,v) for(auto it=v.begin();it!=v.end();++it)
-#define sz(c) ((int)c.size())
-#define zero(v) memset(v, 0, sizeof(v))
 #define pb push_back
 #define fst first
 #define snd second
@@ -17,8 +15,7 @@ typedef ll tipo;
 
 struct Line{tipo m,h;};
 tipo inter(Line a, Line b){
-    // guarda que se rompe con paralelas
-    // ni idea con misma linea
+    // guarda que se rompe con paralelas. ni idea con misma linea
     tipo x=b.h-a.h, y=a.m-b.m;
     return x/y+(x%y?!((x>0)^(y>0)):0);//==ceil(x/y)
 }
@@ -28,34 +25,30 @@ struct CHT {
 	int pos;
 	CHT(bool mx=0):mx(mx),pos(0){}//mx=1 si las query devuelven el max
     //Creo que te da la iesima con m mas grande
-	inline Line acc(int i){return c[c[0].m>c.back().m? i : sz(c)-1-i];}
+	inline Line acc(int i){return c[c[0].m>c.back().m? i : c.size()-1-i];}
 	inline bool irre(Line x, Line y, Line z){
-		return c[0].m>z.m? inter(y, z) <= inter(x, y)
-                         : inter(y, z) >= inter(x, y);
-	}
-	void add(tipo m, tipo h) {//O(1) amortizado, los m tienen que entrar ordenados
-        if(mx) m*=-1, h*=-1;
-		Line l=(Line){m, h};
-        if(sz(c) && m==c.back().m) { l.h=min(h, c.back().h), c.pop_back(); if(pos) pos--; }
-        while(sz(c)>=2 && irre(c[sz(c)-2], c[sz(c)-1], l)) { c.pop_back(); if(pos) pos--; }
-        c.pb(l);
-	}
-	inline bool fbin(tipo x, int m) {return inter(acc(m), acc(m+1))>x;}//esta x en el bin m o antes?
-	tipo eval(tipo x){
-		int n = sz(c);
-		//query con x no ordenados O(lgn)
+		return c[0].m>z.m? inter(y,z) <= inter(x,y) : inter(y,z) >= inter(x,y);}
+	void add(tipo m, tipo h) {//O(1) amortiz, los m tienen que entrar ordenados
+    if(mx) m*=-1, h*=-1;
+    Line l=(Line){m, h};
+    if(c.size() && m==c.back().m) {
+			l.h=min(h, c.back().h), c.pop_back(); if(pos) pos--; }
+    while(c.size()>=2 && irre(c[c.size()-2], c[c.size()-1], l)) {
+			c.pop_back(); if(pos) pos--; }
+    c.pb(l);
+	} //fbin: esta x en el bin m o antes?
+	inline bool fbin(tipo x, int m) {return inter(acc(m), acc(m+1))>x;}
+	tipo eval(tipo x){//query con x no ordenados O(lgn)
+		int n = c.size();
 		int a=-1, b=n-1;
 		while(b-a>1) { int m = (a+b)/2;
 			if(fbin(x, m)) b=m;
-			else a=m;
-		}
-		return (acc(b).m*x+acc(b).h)*(mx?-1:1);
-        //query O(1) amorrtizado
+			else a=m;}
+		return (acc(b).m*x+acc(b).h)*(mx?-1:1); //query O(1) amortizado
 		while(pos>0 && fbin(x, pos-1)) pos--;
 		while(pos<n-1 && !fbin(x, pos)) pos++;
 		return (acc(pos).m*x+acc(pos).h)*(mx?-1:1);
-	}
-} ch;
+	}} ch;
 
 
 

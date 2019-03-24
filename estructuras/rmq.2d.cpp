@@ -18,9 +18,7 @@ struct RMQ2D{//n filas x m columnas
 		int c=(a+b)/2;
 		return operacion(get(i1, j1, i2, j2, 2*n, a, c),
          get(i1, j1, i2, j2, 2*n+1, c, b));
-	}
-} rmq;
+	}} rmq;
 //Example to initialize a grid of M rows and N columns:
 RMQ2D rmq; rmq.init(n,m);
-forn(i, n) forn(j, m){
-	int v; cin >> v; rmq.set(i, j, v);}
+forn(i, n) forn(j, m){int v; cin >> v; rmq.set(i, j, v);}

@@ -1,11 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define dprint(v) cout << #v"=" << v << endl
-#define forr(i, a, b) for(int i=a; i<(b); i++)
+#define forsn(i, a, b) for(int i=a; i<(b); i++)
 #define forn(i, n) forr(i, 0, n)
-#define forall(it, v) for(auto it=v.begin(); it!=v.end(); ++it)
-#define sz(c) ((int)c.size())
-#define zero(v) memset(v, 0, sizeof(v))
 #define pb push_back
 #define fst first
 #define snd second
@@ -27,8 +24,8 @@ struct Line {
         return b - s->b < (s->m - m) * x;
     }
 };
-struct HullDynamic : public multiset<Line>{ // will maintain upper hull for maximum
-    bool bad(iterator y) {
+struct HullDynamic : public multiset<Line>{ // maintains upper hull for maximum
+    bool bad(iterator y) { // Check si es una fn redundante
         iterator z = next(y);
         if (y == begin()) {
             if (z == end()) return 0;
@@ -40,14 +37,14 @@ struct HullDynamic : public multiset<Line>{ // will maintain upper hull for maxi
     }
     iterator next(iterator y){return ++y;} 
     iterator prev(iterator y){return --y;} 
-    void insert_line(ll m, ll b) {
+    void insert_line(ll m, ll b) { // O(log n) - No se puede borrar
         iterator y = insert((Line) { m, b });
         y->it=y;
         if (bad(y)) { erase(y); return; }
         while (next(y) != end() && bad(next(y))) erase(next(y));
         while (y != begin() && bad(prev(y))) erase(prev(y));
     }
-    ll eval(ll x) {
+    ll eval(ll x) { //O(log n)
         Line l = *lower_bound((Line) { x, is_query });
         return l.m * x + l.b;
     }
