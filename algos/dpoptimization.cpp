@@ -3,13 +3,13 @@
 convex hull 1: dp[i] = min{dp[j] + b[j] * a[i]}, j < i. Si se cumple b[j] >= b[j+1] y a[i] <= a[i+1] entonces pasa de O(n^2) a O(n) sino pasa a O(nlogn)
 
 input N
-for i ∈ [0..N)
+for i in [0..N)
      input a[i]
      input b[i]
 let E = empty lower envelope structure
 let dp[0] = 0
 add the line y=mx+b to E, where m=b[0] and b=dp[0] //b is zero
-for i ∈ [1..N)
+for i in [1..N)
      dp[i] = E.query(a[i])
      if i<N
           E.add(m=b[i],b=dp[i])
@@ -48,8 +48,10 @@ def ComputeFullDP:
 	ComputeDP(i, 0, n, 0, n)
 
 
-knuth: dp[i][j] = min{dp[i][k] + dp[k][j]} + C[i][j], i < k < j. Se debe cumplir: A[i, j - 1] <= A[i, j] <= A[i + 1, j]. Pasa de O(n^3) a O(n^2)
-Donde A[i][j] es el minimo k tal que dp[i][j] = dp[i][k] + dp[k][j] + C[i][j]
+knuth: dp[i][j] = min(dp[i][k] + dp[k][j]) + C[i][j], i < k < j.
+Se debe cumplir: A[i, j - 1] <= A [i, j] <= A[i + 1, j].
+Pasa de O(n^3) a O(n^2)
+Donde A[i][j] es el minimo k tal que dp[i][j] = dp[i][k] + dp[k][j] + C[i][j]
 Tambien es aplicable si:
 C[a][c] + C[b][d] <= C[a][d] + C[b][c] y C[b][c] <= C[a][d], a<=b<=c<=d
 

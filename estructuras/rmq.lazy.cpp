@@ -1,8 +1,7 @@
-//Dado un arreglo y una operacion asociativa con neutro, get(i, j) opera sobre el rango [i, j).
 typedef int Elem;//Elem de los elementos del arreglo
 typedef int Alt;//Elem de la alteracion
 #define operacion(x,y) x+y
-const Elem neutro=0; const Alt neutro2=0;
+const Elem neutro=0; const Alt neutroD=0; // Operaciones asociativas con neutro
 #define MAXN 1024000
 struct RMQ{
 	int sz;
@@ -11,26 +10,24 @@ struct RMQ{
 	Elem &operator[](int p){return t[sz+p];}
 	void init(int n){//O(nlgn)
 		sz = 1 << (32-__builtin_clz(n));
-		forn(i, 2*sz) t[i]=neutro;
-		forn(i, 2*sz) dirty[i]=neutro2;
+		forn(i, 2*sz) {t[i]=neutro; dirty[i]=neutroD;}
 	}
-	void updall(){//O(n)
-		dforn(i, sz) t[i]=operacion(t[2*i], t[2*i+1]);}
+	void updall(){dforn(i, sz) t[i]=operacion(t[2*i], t[2*i+1]);} // O(n)
 	void opAltT(int n,int a,int b){//altera el valor del nodo n segun su dirty y el intervalo que le corresponde.
 			t[n] += dirty[n]*(b-a); //en este caso la alteracion seria sumarle a todos los elementos del intervalo [a,b) el valor dirty[n]
 		}
 	void opAltD(int n ,Alt val){
 		dirty[n]+= val;
-		}//actualiza el valor de Dirty "sumandole" val. podria cambiar el valor de dirty dependiendo de la operacion que se quiera al actualizar un rango. Ej:11402.cpp
+		}//actualiza el valor de Dirty "sumandole" val. podria cambiar el valor de dirty dependiendo de la operacion que se quiera al actualizar un rango
 	void push(int n, int a, int b){//propaga el dirty a sus hijos
-		if(dirty[n]!=neutro2){
+		if(dirty[n]!=neutroD){
 			//t[n]+=dirty[n]*(b-a);//altera el nodo 
 			opAltT(n,a,b); 
 			if(n<sz){
 				opAltD(2*n,dirty[n]);//dirty[2*n]+=dirty[n];
 				opAltD(2*n+1,dirty[n]);//dirty[2*n+1]+=dirty[n];
 			}
-			dirty[n]=neutro2;
+			dirty[n]=neutroD;
 		}
 	}
 	Elem get(int i, int j, int n, int a, int b){//O(lgn)
