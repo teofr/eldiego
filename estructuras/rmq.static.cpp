@@ -1,5 +1,5 @@
 struct RMQ{
-	#define LVL 10
+	#define LVL 10 // LVL >= ceil(logN)
 	tipo vec[LVL][1<<(LVL+1)];
 	tipo &operator[](int p){return vec[0][p];}
 	tipo get(int i, int j) {//intervalo [i,j)
