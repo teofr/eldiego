@@ -108,8 +108,9 @@ Dado un conjunto de funciones de la pinta f(x)=mx+b, encontrar $min_f(f(x))$, pa
 \cppfile{geometria/segm.cpp}
 \subsection{Rectangle}
 \cppfile{geometria/rect.cpp}
-\subsection{Polygon Area}
-\cppfile{geometria/area.cpp}
+\subsection{Polygon Area + centro de masa}
+\cppfile{geometria/centro.de.masa.cpp}
+% \cppfile{geometria/area.cpp}
 \subsection{Circle}
 \cppfile{geometria/circle.cpp}
 \subsection{Point in Poly}
@@ -192,7 +193,7 @@ conjuntos no vacios: $\binom{n-1}{k-1}$ ;; conjuntos vacios: $\binom{n+k-1}{k-1}
 % $$y=\sum_{j=1}^n (x_j*(\prod_{i=1, i\neq j}^n m_i)_{m_j}^{-1}*\prod_{i=1, i\neq j}^n m_i)$$
 \cppfile{math/chinoDelResto.cpp}
 \subsection{Criba con divisores O(n)}
-\cppfile[19-39]{math/criba.cpp}
+\cppfile[19-34]{math/criba.cpp}
 % \subsection{Funciones de primos}
 Sea $n=\prod{p_i^{k_i}}$, fact(n) genera un map donde a cada $p_i$ le asocia su $k_i$
 \cppfile[33-89]{math/func.primos.cpp} % Achicar mucho
