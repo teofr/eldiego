@@ -7,8 +7,6 @@
 % \centering{\includegraphics[width=3.5cm]{fotodiego}}
 %\tableofcontents\newpage
 
-test 4
-
 \section{algorithm}%%%%%%%%%%%%%%%%%%ALGORITHM%%%%%%%%%%%%%%%%%%
 \input{algorithm.tex}
 
@@ -20,6 +18,8 @@ test 4
 \cppfile{estructuras/rmq.dynamic.cpp}
 \subsection{RMQ (lazy)}
 \cppfile{estructuras/rmq.lazy.cpp}
+\subsection{RMQ (2D)}
+\cppfile{estructuras/rmq.2d.cpp}
 % \subsection{RMQ (persistente)}
 % \cppfile[23-53]{estructuras/rmq.persistent.cpp}
 \subsection{Fenwick Tree - Prefix sums 2D} % Esta hecho para 2D
@@ -31,8 +31,6 @@ test 4
 \cppfile{grafos/union.find.cpp}
 \subsection{Disjoint Intervals}
 \cppfile{estructuras/disjoint.intervals.cpp}
-\subsection{RMQ (2D)}
-\cppfile{estructuras/rmq.2d.cpp}
 % \subsection{Big Int}
 % \cppfile{estructuras/bigint.cpp}
 \subsection{HashTables} % Tal vez
@@ -71,7 +69,7 @@ Dado un conjunto de funciones de la pinta f(x)=mx+b, encontrar $min_f(f(x))$, pa
 \subsection{Manacher - Palindromo O(n)}
 \cppfile[18-37]{string/manacher.cpp} % Checkear que funcione
 \subsection{KMP - String search O(n+k)}
-\cppfile[21-43]{string/kmp.cpp}
+\cppfile[21-38]{string/kmp.cpp}
 %\subsection{Booth}
 %\cppfile[5-39]{string/booth.cpp}
 %\subsection{Trie}
@@ -329,8 +327,7 @@ $\pi(10^{12})$ = 37.607.912.018% ;
 %\subsubsection{Divisores}
 \paragraph{Divisores} \ \\
 Cantidad de divisores ($\sigma_0$) para \emph{algunos} $n / \neg\exists n'<n, \sigma_0(n') \geqslant \sigma_0(n)$ \\
-$\sigma_0(60)$ = 12 ; $\sigma_0(120)$ = 16 ; $\sigma_0(180)$ = 18 ; $\sigma_0(240)$ = 20 ; $\sigma_0(360)$ = 24 \\
-$\sigma_0(720)$ = 30 ; $\sigma_0(840)$ = 32 ; $\sigma_0(1260)$ = 36 ; $\sigma_0(1680)$ = 40 ; $\sigma_0(10080)$ = 72 \\ $\sigma_0(15120)$ = 80 ; $\sigma_0(50400)$ = 108 ; $\sigma_0(83160)$ = 128 ; $\sigma_0(110880)$ = 144 \\
+$\sigma_0(60)$ = 12 ; $\sigma_0(120)$ = 16 ; $\sigma_0(180)$ = 18 ; $\sigma_0(240)$ = 20 ; $\sigma_0(360)$ = 24 ; $\sigma_0(720)$ = 30 ; $\sigma_0(840)$ = 32 ; $\sigma_0(1260)$ = 36 ; $\sigma_0(1680)$ = 40 ; $\sigma_0(10080)$ = 72 ; $\sigma_0(15120)$ = 80 ; $\sigma_0(50400)$ = 108 ; $\sigma_0(83160)$ = 128 ; $\sigma_0(110880)$ = 144 ;
 $\sigma_0(498960)$ = 200 ; $\sigma_0(554400)$ = 216 ; $\sigma_0(1081080)$ = 256 ; $\sigma_0(1441440)$ = 288  $\sigma_0(4324320)$ = 384 ; $\sigma_0(8648640)$ = 448
  
 %
