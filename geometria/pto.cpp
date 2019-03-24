@@ -22,7 +22,7 @@ struct pto{
 double dist(pto a, pto b){return (b-a).norm();}
 typedef pto vec;
 
-//positivo si aob están en sentido antihorario con un ángulo <180º
+//positivo si aob estan en sentido antihorario con un ángulo <180º
 double angle(pto a, pto o, pto b){ //devuelve radianes! (-pi,pi)
 	pto oa=a-o, ob=b-o;
 	return atan2(oa^ob, oa*ob);}

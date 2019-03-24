@@ -24,9 +24,9 @@ struct mnum{
 };
 
 /*
-DIVISIÓN MODULAR
+DIVISION MODULAR
 Para dividir hay que multiplicar por el inverso multiplicativo. x/y = x*(y^-1).
-El inverso multiplicativo de y módulo n es y^-1 tal que y*(y^-1) = 1 mod n.
+El inverso multiplicativo de y modulo n es y^-1 tal que y*(y^-1) = 1 mod n.
 Por ejemplo, si n=7, y=2, o sea que quiero dividir por y,
 y^-1 = 4 porque y*(y^-1) = 8 = 1 mod 7.
 */
