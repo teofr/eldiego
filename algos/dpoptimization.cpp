@@ -17,7 +17,7 @@ print dp[N]
 
 convex hull trick 2: dp[i][j] = min{dp[i-1][k] + b[k] * a[j]}, k < j. Si se cumple b[k] >= b[k+1] y a[j] <= a[j+1] entonces pasa de O(kn^2) a O(kn) sino pasa O(knlogn)
 
-divide and conquer: dp[i][j] = min{dp[i-1][k] + C[k+1][j]}, k < j. Se debe cumplir: A[i][j] <= A[i][j+1]. Pasa de O(kn^2) a O(knlogn)
+divide and conquer: dp[i][j] = min{dp[i-1][k] + C[k (o k+1?) ][j]}, k < j. Se debe cumplir: A[i][j] <= A[i][j+1]. Pasa de O(kn^2) a O(knlogn)
 Donde A[i][j] es el minimo k tal que dp[i][j] = dp[i-1][k] + C[k][j]
 Tambien es aplicable si:
 C[a][c] + C[b][d] <= C[a][d] + C[b][c] y C[b][c] <= C[a][d], a<=b<=c<=d
