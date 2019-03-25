@@ -54,7 +54,7 @@ struct poly {
 	set<tipo> roots(){
 		set<tipo> roots;
 		simplify();
-		if(c[0]) roots.insert(0);
+		if(c[0] == 0) roots.insert(0);
 		int i = 0;
 		tipo a0=0;
 		while(a0 == 0 && i < sz(c)) a0 = abs(c[i]), i++;
