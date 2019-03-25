@@ -23,19 +23,18 @@ string P;//cadena a buscar(what)
 int b[MAXLEN];//back table b[i] maximo borde de [0..i)
 void kmppre(){//by gabina with love
     int i =0, j=-1; b[0]=-1;
-    while(i<sz(P)){
+    while(i<P.size()){
         while(j>=0 && P[i] != P[j]) j=b[j];
         i++, j++, b[i] = j;
     }
 }
 void kmp(){
     int i=0, j=0;
-    while(i<sz(T)){
+    while(i<T.size()){
         while(j>=0 && T[i]!=P[j]) j=b[j];
         i++, j++;
-        if(j==sz(P)) printf("P is found at index %d in T\n", i-j), j=b[j];
-    }
-}
+        if(j==P.size()) {printf("P found at index %d in T\n", i-j); j=b[j];}
+    }}
 
 int main(){
     cout << "T=";

@@ -14,14 +14,12 @@ using namespace std;
 typedef pair<int, int> ii;
 const int MAXN=100100;
 
-string s;
 int d1[MAXN];//d1[i]=long del maximo palindromo impar con centro en i
 int d2[MAXN];//d2[i]=analogo pero para longitud par
-//0 1 2 3 4
-//a a b c c <--d1[2]=3
-//a a b b <--d2[2]=2 (estan uno antes)
-void manacher(){
-	int l=0, r=-1, n=sz(s);
+//a a b c c <--d1[2]=5
+//a a b b <--d2[2]=4 (estan uno antes)
+void manacher(string &s){
+	int l=0, r=-1, n=s.size();
 	forn(i, n){
 		int k=(i>r? 1 : min(d1[l+r-i], r-i));
 		while(i+k<n && i-k>=0 && s[i+k]==s[i-k]) ++k;
@@ -35,11 +33,14 @@ void manacher(){
 		d2[i] = --k;
 		if(i+k-1 > r) l=i-k, r=i+k-1;
 	}
-}
+	forn(i,n) { // Traducir los resultados a tamanio total del palindromo
+		d1[i] = d1[i] * 2 - 1;
+		d2[i] = d2[i] * 2;
+	}}
 
 int main(){
 	while(cin >> s){
-		manacher();
+		manacher(s);
 		forn(i, sz(s)) cout << d1[i] << ' '; cout << endl;
 		forn(i, sz(s)) cout << d2[i] << ' '; cout << endl;
 	}

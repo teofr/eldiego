@@ -8,6 +8,9 @@ using namespace std;
 #define forn(i, n) forr(i, 0, n)
 #define forall(it,v) for(typeof(v.begin()) it=v.begin();it!=v.end();++it)
 #define INF 1e9
+#define pb push_back
+#define fst first
+#define snd second
 typedef pair<int, int> ii;
 const int MAXN=100100;
 
@@ -20,18 +23,18 @@ int p[MAXN];//padres
 vector<int> R;//respuesta
 void rec(int i){
 	if(i==-1) return;
-	R.push_back(a[i]);
+	R.pb(a[i]);
 	rec(p[i]);
 }
 int lis(){//O(nlogn)
-	d[0] = ii(-INF, -1); forn(i, N) d[i+1]=ii(INF, -1);
+	d[0] = ii(-INF, -1);
+	forn(i, N) d[i+1]=ii(INF, -1);
 	forn(i, N){
 		int j = upper_bound(d, d+N+1, ii(a[i], INF))-d;
-		if (d[j-1].first < a[i]&&a[i] < d[j].first){
-			p[i]=d[j-1].second;
+		if (d[j-1].fst < a[i]&&a[i] < d[j].fst){
+			p[i]=d[j-1].snd;
 			d[j] = ii(a[i], i);
-		}
-	}
+	}}
 	R.clear();
 	dforn(i, N+1) if(d[i].first!=INF){
 		rec(d[i].second);//reconstruir

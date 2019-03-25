@@ -75,13 +75,18 @@ void blockcuttree(){
     }
 }    
 
+// Uso
+initDfs(n);
+forn(i, m){int a,b; cin >> a >> b; addEdge(a,b); }
+dfs(0,-1);
+// Componente de i en comp[i]
+// e tiene edges con u,v en la componente comp y bridge si es puente
+// Hay nbc componentes biconexas
+
 int main() {
 	while(cin >> n >> m){
 		initDfs(n);
-		forn(i, m){
-			int a,b; cin >> a >> b;
-			addEdge(a,b);
-		}
+		forn(i, m){ int a,b; cin >> a >> b; addEdge(a,b); }
         dfs(0,-1);		
         forn(i, n) cout << "comp[" << i << "] = " <<  comp[i] << endl;
 		for(auto &ne: e) cout << ne.u << "->" << ne.v << " en la comp. " << ne.comp << endl;

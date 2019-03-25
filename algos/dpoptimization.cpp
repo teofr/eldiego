@@ -1,6 +1,6 @@
 //codeforces.com/blog/entry/8219
 
-convex hull 1: dp[i] = min{dp[j] + b[j] * a[i]}, j < i. Si se cumple b[j] >= b[j+1] y a[i] <= a[i+1] entonces pasa de O(n^2) a O(n) sino pasa a O(nlogn)
+convex hull trick 1: dp[i] = min{dp[j] + b[j] * a[i]}, j < i. Si se cumple b[j] >= b[j+1] y a[i] <= a[i+1] entonces pasa de O(n^2) a O(n) sino pasa a O(nlogn)
 
 input N
 for i in [0..N)
@@ -15,11 +15,7 @@ for i in [1..N)
           E.add(m=b[i],b=dp[i])
 print dp[N]
 
-//Mirar en ConvexHullTrick
-
-
-convex hull 2: dp[i][j] = min{dp[i-1][k] + b[k] * a[j]}, k < j. Si se cumple b[k] >= b[k+1] y a[j] <= a[j+1] entonces pasa de O(kn^2) a O(kn) sino pasa O(knlogn)
-
+convex hull trick 2: dp[i][j] = min{dp[i-1][k] + b[k] * a[j]}, k < j. Si se cumple b[k] >= b[k+1] y a[j] <= a[j+1] entonces pasa de O(kn^2) a O(kn) sino pasa O(knlogn)
 
 divide and conquer: dp[i][j] = min{dp[i-1][k] + C[k+1][j]}, k < j. Se debe cumplir: A[i][j] <= A[i][j+1]. Pasa de O(kn^2) a O(knlogn)
 Donde A[i][j] es el minimo k tal que dp[i][j] = dp[i-1][k] + C[k][j]
@@ -46,7 +42,6 @@ def ComputeFullDP:
   Initialize dp for i = 0 somehow
   for i in range(1, m):
 	ComputeDP(i, 0, n, 0, n)
-
 
 knuth: dp[i][j] = min(dp[i][k] + dp[k][j]) + C[i][j], i < k < j.
 Se debe cumplir: A[i, j - 1] <= A [i, j] <= A[i + 1, j].

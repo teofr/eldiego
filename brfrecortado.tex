@@ -54,11 +54,11 @@ Dado un conjunto de funciones de la pinta f(x)=mx+b, encontrar $min_f(f(x))$, pa
 %\cppfile[1-59]{estructuras/rmq.mixed.cpp}
 
 \section{Algos}%%%%%%%%%%%%%%%%%%ALGORITMOS%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Longest Increasing Subsecuence}
-\cppfile[14-42]{algos/lis.cpp} % Vemos
+\subsection{Longest Increasing Subsecuence - O(n log n)}
+\cppfile[17-45]{algos/lis.cpp} % Vemos
 %\subsection{Alpha-Beta prunning}
 %\cppfile{algos/alphabeta.cpp}
-\subsection{Mo's algorithm}
+\subsection{Mo's algorithm - Queries sin RMQs O(n sqrt n log n + Q log Q)}
 \cppfile{algos/mosalgorithm.cpp}
 %\subsection{huffman}
 %\cppfile{algos/huffman.cpp}
@@ -66,10 +66,10 @@ Dado un conjunto de funciones de la pinta f(x)=mx+b, encontrar $min_f(f(x))$, pa
 \cppfile{algos/dpoptimization.cpp}
 
 \section{Strings}%%%%%%%%%%%%%%%%%%STRINGS%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Manacher - Palindromo O(n)}
-\cppfile[18-37]{string/manacher.cpp} % Checkear que funcione
+\subsection{Manacher - Palindromos O(n)}
+\cppfile[17-39]{string/manacher.cpp}
 \subsection{KMP - String search O(n+k)}
-\cppfile[21-38]{string/kmp.cpp}
+\cppfile[21-37]{string/kmp.cpp}
 %\subsection{Booth}
 %\cppfile[5-39]{string/booth.cpp}
 %\subsection{Trie}
@@ -81,11 +81,11 @@ Dado un conjunto de funciones de la pinta f(x)=mx+b, encontrar $min_f(f(x))$, pa
 %\subsection{Suffix Array (corto, nlog2n)}
 %\cppfile[12-26]{string/suffix.array.short.cpp}
 \subsection{Suffix Array (largo, nlogn)} % Mejor dejar el largo
-\cppfile[-34]{string/suffix.array.cpp}
+\cppfile[-35]{string/suffix.array.cpp}
 \subsection{String Matching With Suffix Array O(k log n)}
 \cppfile[37-58]{string/suffix.array.cpp}
 \subsection{LCP - Longest Common Prefix O(n)}
-\cppfile[60-75]{string/suffix.array.cpp}
+\cppfile[60-74]{string/suffix.array.cpp}
 \subsection{Corasick - Multi-string search O(n + sum ki + matches)}
 \cppfile[9-51]{string/corasick.cpp}
 \subsection{Suffix Automaton}
@@ -362,8 +362,8 @@ $\sigma_0(498960)$ = 200 ; $\sigma_0(554400)$ = 216 ; $\sigma_0(1081080)$ = 256 
 \cppfile{grafos/2sat.cpp}
 \subsection{Articulation Points}
 \cppfile{grafos/articulaciones.cpp}
-\subsection{Comp. Biconexas y Puentes} % Achicar main
-\cppfile{grafos/biconexas.bridge.cpp}
+\subsection{Comp. Biconexas y Puentes}
+\cppfile[1-84]{grafos/biconexas.bridge.cpp}
 \subsection{LCA + Climb - O(n log n) build, O(log n)} % Achicar?
 \cppfile{grafos/lca.climb.cpp}
 \subsection{Heavy Light Decomposition - Querys en caminos entre nodos}
